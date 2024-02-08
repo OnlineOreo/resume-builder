@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" id="nameInput" oninput="nameInput()">
+    <input type="text" id="positionField" oninput="positionInput()">
+    <button onclick="revrse()">revrse</button>
+    <button onclick="topr()">topr</button>
+    <button onclick="normals()">normals</button>
+
+    <div id="outputContainer">
+        <div class="header">
+            <div class="name_position_box">
+                <div class="name">Mannu Rawat</div>
+                <div class="position">PHP Developer</div>
+            </div>
+            <div class="profile"></div>
+        </div>
+        <div class="links">
+            <div class="email">mannurawat@gmail.com</div>
+            <div class="number">72858969589</div>
+            <div class="address">Sec-63 Noida</div>
+        </div>
+        <div class="date">February,2,2024</div>
+        <div class="dear">Sir...</div>
+        <div class="content"></div>
+        <div class="sincerely">Sincerely,</div>
+    </div>
+    <script>
+        function nameInput() {
+            const inputText = document.getElementById('nameInput').value;
+            const name = document.getElementsByClassName('name')[0];
+
+            // You can customize the styling of the output here
+            // const outputName = `<div class="name">${inputText}</div>`;
+
+            name.innerHTML = inputText;
+        }
+        function positionInput() {
+            const positionField = document.getElementById('positionField').value;
+            const position = document.getElementsByClassName('position')[0];
+
+            // You can customize the styling of the output here
+            // const outputPosition = `<div class="position">${positionField}</div>`;
+
+            position.innerHTML = positionField;
+        }
+        function revrse() {
+            const header = document.getElementsByClassName("header")[0];
+            header.style.cssText = 'flex-direction:row-reverse';
+        }
+        function topr() {
+            const header = document.getElementsByClassName("header")[0];
+            header.style.cssText = 'flex-direction:column-reverse;justify-content:center;';
+        }
+        function normals() {
+            const header = document.getElementsByClassName("header")[0];
+            header.style.cssText = 'flex-direction:column-reverse;justify-content: space-between;';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    margin: 0;
+}
+
+#inputField {
+    width: 40%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#outputContainer {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    padding: 20px;
+    /* flex-direction: row-reverse; */
+    border: 1px solid red;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid blue;
+    border-radius: 50%;
+}
+
+.name_position_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid rgb(89, 0, 255);
+}
+
+.date {
+    text-align: end;
+    border: 1px solid gray;
+}
+
+.dear {
+    text-align: start;
+    border: 1px solid rgb(5, 5, 5);
+}
+
+.content {
+    height: 200px;
+    border: 1px solid brown;
+}
+
+.sincerely {
+    text-align: start;
+    border: 1px solid rgb(5, 5, 5);
+}

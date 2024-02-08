@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="side_navbar">
+            <div class="nav_links">
+                <div class="logo">LOGO</div>
+                <div id="write">write</div>
+                <div id="customize">customize</div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="top"></div>
+            <div id="writing" class="writing">
+                <div class="personal_datail">persnol detail
+                    <input type="text" placeholder="Enter Full Name" oninput="userName(this,'persnol_detail')">
+                    <input type="text" placeholder="Enter Position" oninput="userPosition(this,'persnol_detail')">
+                    <input type="text" placeholder="Enter Number" oninput="userNumber(this,'persnol_detail')">
+                    <input type="text" placeholder="Enter Email" oninput="userEmail(this,'persnol_detail')">
+                    <input type="text" placeholder="Enter Address" oninput="userAddress(this,'persnol_detail')">
+                    <button onclick="persanolDetailSave()">save</button>
+                </div>
+                <div class="date">date</div>
+                <div class="recipient_details">recipient_details</div>
+                <div class="body">body</div>
+            </div>
+            <div id="customize_feild" class="customize_feild">
+                <div class="layout">layout<button onclick="">rotate</button></div>
+                <div class="color">color</div>
+                <div class="header">
+                    <h2>header</h2>
+                    <button id="headerLeftRight" onclick="headerCustumize(this,'headerLeftRight')">=0</button>
+                    <button id="headerUpDown" onclick="headerCustumize(this,'headerUpDown')">=0=</button>
+                    <button id="headerRightLeft" onclick="headerCustumize(this,'headerRightLeft')">0=</button>
+                    <h2>details</h2>
+                    <button id="detailInOneColumn" onclick="detailInOneColumn()">=</button>
+                    <button id="detailInline" onclick="detailInline()">--</button>
+                    <button id="detailInTwoColumn" onclick="detailInTwoColumn()" disabled>==</button>
+                    <h2>Icons</h2>
+                    <button id="showIcon" onclick="iconCostumize('show')">Show Icon</button>
+                    <button id="hideIcon" onclick="iconCostumize('hide')">Hide Icon</button>
+                    <h2>Change Order of links ??</h2>
+                </div>
+                <div class="name">
+                    <h2>Name</h2>
+                    <h4>size</h4>
+                    <button onclick="nameSize('xs')">xs</button>
+                    <button onclick="nameSize('s')">s</button>
+                    <button onclick="nameSize('m')">m</button>
+                    <button onclick="nameSize('l')">l</button>
+                    <button onclick="nameSize('xl')">xl</button>
+                    <h4>bold</h4>
+                    <button onclick="nameFontWeight('bold')">bold</button>
+                    <button onclick="nameFontWeight('normal')">normal</button>
+                    <h4>Font Style ??</h4>
+                    <button onclick="nameFontFamily('body')">body font</button>
+                    <button onclick="nameFontFamily('creative')">creative</button>
+                </div>
+                <div class="job-title">
+                    <h2>job title</h2>
+                    <h4>size</h4>
+                    <button onclick="positionSize('s')">s</button>
+                    <button onclick="positionSize('m')">m</button>
+                    <button onclick="positionSize('l')">l</button>
+                    <h4>Position</h4>
+                    <button onclick="positionPlace('below')">below</button>
+                    <button onclick="positionPlace('same-line')">same line</button>
+                    <h4>style</h4>
+                    <button onclick="positionStyle('normal')">normal</button>
+                    <button onclick="positionStyle('italic')">italic</button>
+                </div>
+            </div>
+        </div>
+        <div id="right" class="right">
+            <div id="a4page" class="a4page">
+                <div id="header" class="header">
+                    <div id="user_detail" class="user_detail">
+                        <div id="name">Mannu Rawat</div>
+                        <div id="position">Full Stack Developer</div>
+                        <div id="details" class="links">
+                            <div id="number"><i class="fa-solid fa-phone fa-sm"></i> 7289884190</div>
+                            <div id="email"><i class="fa-solid fa-envelope fa-sm"></i> mannurawat@gmail.com</div>
+                            <div id="address"><i class="fa-solid fa-location-dot fa-sm"></i> Sec-63 Noida</div>
+                        </div>
+                    </div>
+                    <div class="profile"></div>
+                </div>
+                <div class="date">July,13,2024</div>
+                <div class="recipientDetails">
+                    <div id="name_of_department">HR</div>
+                    <div id="company_name">AdsGrill</div>
+                    <div id="company_address">Subhash Nagar, Delhi</div>
+                </div>
+                <div class="dear">Mam,</div>
+                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque corporis incidunt
+                    aliquid magnam sequi rem omnis animi beatae sapiente necessitatibus, quas architecto modi culpa
+                    explicabo eos? Aut sapiente temporibus doloribus.</div>
+                <div class="Sincerely">Sincerely,</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
