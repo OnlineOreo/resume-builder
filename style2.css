@@ -2,22 +2,23 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-family: calibri;
 }
 
 .main {
     width: 100%;
     height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 232, 192);
+    background-color: rgba(235, 232, 224, 0.973);
 }
 
 .main .side_navbar {
     width: 12%;
     height: 100%;
-    padding: 10px 10px;
+    padding: 0px 10px;
 }
 
 .main .side_navbar .nav_links {
@@ -29,12 +30,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.link {
+    border: 1px solid black;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
 }
 
 .main .center {
     width: 43%;
     height: 100%;
-    padding: 10px 30px;
+    padding: 0px 30px;
     overflow-y: scroll;
     scrollbar-width: none;
 }
@@ -48,6 +58,11 @@
     position: sticky;
     top: 0%;
     left: 0%;
+    z-index: 99;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .main .center .writing {
@@ -64,15 +79,16 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .writing .date {
     width: 100%;
-    height: 100px;
     background-color: white;
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .writing .recipient_details {
@@ -82,15 +98,16 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .writing .body {
     width: 100%;
-    height: 400px;
     background-color: white;
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .customize_feild {
@@ -106,6 +123,7 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .customize_feild .color {
@@ -115,6 +133,7 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .customize_feild .header {
@@ -134,6 +153,7 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .center .customize_feild .job-title {
@@ -143,12 +163,13 @@
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
     margin: 20px 0px;
+    padding: 20px;
 }
 
 .main .right {
     width: 45%;
     height: 100%;
-    padding: 10px 20px;
+    padding: 0px 20px;
     overflow-y: scroll;
     scrollbar-width: none;
 }
@@ -217,11 +238,6 @@
 .main .right .a4page .recipientDetails {
     width: 100%;
     border: 1px solid rgb(0, 165, 0);
-}
-
-.main .right .a4page .dear {
-    width: 100%;
-    border: 1px solid rgb(161, 0, 148);
 }
 
 .main .right .a4page .content {
