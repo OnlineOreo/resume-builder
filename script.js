@@ -7,25 +7,6 @@ var header = document.getElementById("header");
 var details = document.getElementById("details");
 var a4page = document.getElementById("a4page");
 
-function downloadPDF() {
-  const a4page = this.document.getElementById("a4page");
-
-  var opt = {
-    margin: 1,
-    filename: "myfile.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-  };
-  html2pdf().set(opt).from(a4page).save();
-
-  // html2canvas(a4page).then((canvas) => {
-  //   const pdf = new jsPDF();
-  //   pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 210, 297); // A4 size
-  //   pdf.save("cover_letter.pdf");
-  // });
-}
-
 const write = document.getElementById("write");
 const customize = document.getElementById("customize");
 customize.addEventListener("click", () => {
@@ -86,35 +67,35 @@ function bodyInput(e, type) {
 function headerCustumize(e, name) {
   // console.log(name);
   if (name === "headerLeftRight") {
-    header.style.cssText += "flex-direction:reverse";
-    document.getElementById("user_detail").style.cssText += "align-items:none;";
-    details.style.cssText += "justify-content:start;";
-    document.getElementById("detailInOneColumn").style.cssText +=
+    header.style.cssText = "flex-direction:reverse";
+    document.getElementById("user_detail").style.cssText = "align-items:none;";
+    details.style.cssText = "justify-content:start;";
+    document.getElementById("detailInOneColumn").style.cssText =
       "display:inline-block;";
   }
   if (name === "headerRightLeft") {
-    header.style.cssText += "flex-direction:row-reverse";
-    document.getElementById("user_detail").style.cssText +=
+    header.style.cssText = "flex-direction:row-reverse";
+    document.getElementById("user_detail").style.cssText =
       "align-items:flex-end;";
-    details.style.cssText += "justify-content:flex-end;";
-    document.getElementById("detailInOneColumn").style.cssText +=
+    details.style.cssText = "justify-content:flex-end;";
+    document.getElementById("detailInOneColumn").style.cssText =
       "display:inline-block;";
   }
   if (name === "headerUpDown") {
-    header.style.cssText += "flex-direction:column-reverse;align-items:center;";
-    document.getElementById("user_detail").style.cssText +=
+    header.style.cssText = "flex-direction:column-reverse;align-items:center;";
+    document.getElementById("user_detail").style.cssText =
       "align-items:center;";
-    details.style.cssText += "justify-content:center;";
-    document.getElementById("detailInOneColumn").style.cssText +=
+    details.style.cssText = "justify-content:center;";
+    document.getElementById("detailInOneColumn").style.cssText =
       "display:none;";
   }
 }
 function detailInline() {
-  details.style.cssText +=
+  details.style.cssText =
     "justify-content: start;gap: 10px;flex-direction: none;";
 }
 function detailInOneColumn() {
-  details.style.cssText += "flex-direction: column; gap:0px;";
+  details.style.cssText = "flex-direction: column; gap:0px;";
 }
 function iconCostumize(e) {
   // console.log(e);
