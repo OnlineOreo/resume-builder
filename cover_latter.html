@@ -188,8 +188,8 @@
 
             pdf.html(a4page, {
                 callback: function (pdf) {
-                    // pdf.save('test.pdf');
-                    window.open(output('bloburl'));
+                    pdf.save('test.pdf');
+                    // window.open(output('bloburl'));
                 }
             });
         }
