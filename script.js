@@ -7,6 +7,8 @@ var header = document.getElementById("header");
 var details = document.getElementById("details");
 var a4page = document.getElementById("a4page");
 
+var headerStyle = [];
+
 const write = document.getElementById("write");
 const customize = document.getElementById("customize");
 customize.addEventListener("click", () => {
@@ -82,12 +84,15 @@ function headerCustumize(e, name) {
       "display:inline-block;";
   }
   if (name === "headerUpDown") {
-    header.style.cssText = "flex-direction:column-reverse;align-items:center;";
+    headerStyle += header.style.cssText =
+      "flex-direction:column-reverse;align-items:center;";
+    headerStyle += "color:red;";
     document.getElementById("user_detail").style.cssText =
       "align-items:center;";
     details.style.cssText = "justify-content:center;";
     document.getElementById("detailInOneColumn").style.cssText =
       "display:none;";
+    sendData();
   }
 }
 function detailInline() {
@@ -200,4 +205,19 @@ function colorValue(color, type) {
       "background-color:" + color.value;
     colorCustum();
   }
+}
+
+function sendData() {
+  var headerStyles = [];
+  headerStyles = headerStyle;
+  $.ajax({
+    url: "submit.php",
+    type: "post",
+    data: {
+      headerStyle: headerStyles,
+    },
+    success: function (data) {
+      console.log(data);
+    },
+  });
 }

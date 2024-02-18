@@ -20,7 +20,11 @@ if (isset($_POST['test']) && isset($_POST['style'])) {
 
     // Remove the trailing comma and space
     $styleString = rtrim($styleString, '; ');
+    $sql = "INSERT INTO test (detail, css) VALUES ('again', '$styleString')";
 
-    echo $styleString; // Output the concatenated string
-
+    if (mysqli_query($conn, $sql)) {
+        echo $styleString;
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }

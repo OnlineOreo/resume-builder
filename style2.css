@@ -35,11 +35,52 @@
 }
 
 .link {
-    border: 1px solid black;
-    width: 100px;
-    line-height: 30px;
-    text-align: center;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(130deg, rgb(190, 65, 190), rgb(223, 65, 54));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+.link i {
+    font-size: 40px;
+}
+
+.input {
+    width: 60%;
+    padding: 0px 10px;
+    line-height: 30px;
+    font-size: 18px;
+    border: 1px solid rgba(14, 0, 31, 0.541);
+    outline: none;
+}
+
+.input:focus {
+    border: 1px solid rgb(14, 0, 31);
+}
+
+.btn {
+    padding: 8px 20px;
+    color: white;
+    background-color: rgb(30, 0, 58);
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(50, 0, 97);
+}
+
+.btn-light {
+    padding: 8px 20px;
+    color: rgb(30, 0, 58);
+    border: 1px solid rgb(30, 0, 58);
+    border-radius: 10px;
+}
+
 
 .main .center {
     width: 43%;
@@ -74,7 +115,6 @@
 
 .main .center .writing .personal_datail {
     width: 100%;
-    height: 400px;
     background-color: white;
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
@@ -93,7 +133,6 @@
 
 .main .center .writing .recipient_details {
     width: 100%;
-    height: 200px;
     background-color: white;
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
     border-radius: 15px;
@@ -176,10 +215,10 @@
 
 .main .right .a4page {
     max-width: 100%;
-    aspect-ratio: 210/297;
+    aspect-ratio: 595/842;
     margin: auto;
     box-shadow: 2px 2px 7px rgba(180, 180, 180, 0.863);
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: white;
     cursor: pointer;
     padding: 20px;

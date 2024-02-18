@@ -5,53 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css?<?= time() ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
     <div class="main">
         <div class="side_navbar">
             <div class="nav_links">
-                <div class="link logo">LOGO</div>
-                <div class="link" id="write">write</div>
-                <div class="link" id="customize">customize</div>
+                <div class="link logo">
+                    <h2>LOGO</h2>
+                </div>
+                <div class="link" id="write"><i class="fa-solid fa-file-pen"></i>Write</div>
+                <div class="link" id="customize"><i class="fa-brands fa-intercom"></i>Customize</div>
             </div>
         </div>
         <div class="center">
             <div class="top">
-                <input type="text">
-                <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
+                <input class="input mt-1 mb-1" type="text">
+                <button class="btn" id="downloadButton" onclick="downloadPDF()">Download</button>
             </div>
             <div id="writing" class="writing">
                 <div class="personal_datail">
-                    <h1>Persnol Detail</h1>
-                    <input type="text" placeholder="Enter Full Name" oninput="userName(this,'persnol_detail')"><br><br>
-                    <input type="text" placeholder="Enter Position"
-                        oninput="userPosition(this,'persnol_detail')"><br><br>
-                    <input type="text" placeholder="Enter Number" oninput="userNumber(this,'persnol_detail')"><br><br>
-                    <input type="text" placeholder="Enter Email" oninput="userEmail(this,'persnol_detail')"><br><br>
-                    <input type="text" placeholder="Enter Address" oninput="userAddress(this,'persnol_detail')"><br><br>
-                    <button onclick="persanolDetailSave()">save</button>
+                    <h1 class="text-3xl font-bold mb-2">Persnol Detail</h1>
+                    <label class="font-bold">Full Name</label><br>
+                    <input class="input mt-1 mb-1" type="text" placeholder="Enter Full Name" oninput="userName(this,'persnol_detail')"><br>
+                    <label class="font-bold">Position</label><br>
+                    <input class="input mt-1 mb-1" type="text" placeholder="Enter Position" oninput="userPosition(this,'persnol_detail')"><br>
+                    <label class="font-bold">Number</label><br>
+                    <input class="input mt-1 mb-1" type="text" placeholder="Enter Number" oninput="userNumber(this,'persnol_detail')"><br>
+                    <label class="font-bold">Email</label><br>
+                    <input class="input mt-1 mb-1" type="text" placeholder="Enter Email" oninput="userEmail(this,'persnol_detail')"><br>
+                    <label class="font-bold">Address</label><br>
+                    <input class="input mt-1 mb-1" type="text" placeholder="Enter Address" oninput="userAddress(this,'persnol_detail')"><br>
+                    <button class="btn mt-2" onclick="persanolDetailSave()">save</button>
                 </div>
                 <div class="date">
-                    <h1>Date</h1>
-                    <button onclick="dateType('today')">Today</button>
-                    <button onclick="dateType('custum')">custum</button><br><br>
-                    <input type="hidden" id="dateInput" oninput="dateInput(this)">
+                    <h1 class="text-3xl font-bold mb-2">Date</h1>
+                    <button class="btn-light" onclick="dateType('today')">Today</button>
+                    <button class="btn-light" onclick="dateType('custum')">custum</button><br><br>
+                    <input class="input" type="hidden" id="dateInput" oninput="dateInput(this)">
                 </div>
                 <div class="recipient_details">
-                    <h1>Recipient Details</h1>
-                    <h4>Name of Recipient/Department</h4>
-                    <input type="text" id="department_input" oninput="recipentDetail(this,'department')">
-                    <h4>Company Name</h4>
-                    <input type="text" id="company_name_input" oninput="recipentDetail(this,'company_name')">
-                    <h4>Address</h4>
-                    <input type="text" id="company_address_input" oninput="recipentDetail(this,'company_address')">
+                    <h1 class="text-3xl font-bold mb-2">Recipient Details</h1>
+                    <h4 class="font-bold">Name of Recipient/Department</h4>
+                    <input class="input mt-1 mb-1" type="text" id="department_input" oninput="recipentDetail(this,'department')">
+                    <h4 class="font-bold">Company Name</h4>
+                    <input class="input mt-1 mb-1" type="text" id="company_name_input" oninput="recipentDetail(this,'company_name')">
+                    <h4 class="font-bold">Address</h4>
+                    <input class="input mt-1 mb-1" type="text" id="company_address_input" oninput="recipentDetail(this,'company_address')">
                 </div>
                 <div class="body">
                     <h1>Body</h1>
@@ -162,10 +169,12 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="script.js?<?= time() ?>"></script>
     <script>
         $('#summernote').summernote({
             placeholder: 'Dear, Mam/Sir....',
@@ -182,19 +191,16 @@
             ]
         });
 
+
+
         function downloadPDF() {
-            let doc = new jsPDF('p', 'pt', 'a4');
-            var a4page = document.getElementById("a4page");
+            var doc = new jsPDF();
 
-            pdf.html(a4page, {
-                callback: function (pdf) {
-                    pdf.save('test.pdf');
-                    // window.open(output('bloburl'));
-                }
-            });
+            function saveDiv() {
+                doc.fromHTML(document.getElementById("a4page").innerHTML);
+                doc.save('div.pdf');
+            }
         }
-
-
     </script>
 </body>
 

@@ -1,34 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<p>don't print this to pdf</p>
+<div id="pdf">
+    <p>
+        <font size="3" color="red">print this to pdf</font>
+    </p>
+</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download A4 Page as PDF</title>
-</head>
+<button onclick="printDiv('pdf','Title')">print div</button>
 
-<body>
-    <!-- Your HTML content for the A4 page goes here -->
-    <div id="a4page">
-        <!-- This is your A4-sized page content -->
-        <h1>Hello, this is an A4 page!</h1>
-        <p>This is some content on the A4 page.</p>
-    </div>
+<button onclick="saveDiv('pdf','Title')">save div as pdf</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-    <script type="text/javascript">
-        function downloadPDF() {
-            let doc = new jsPDF('p', 'pt', 'letter');
-
-            doc.addHTML(document.body, function () {
-                doc.save('html.pdf');
-            });
-        }
-    </script>
-
-    <!-- Button to trigger PDF download -->
-    <button onclick="downloadPDF()">Download PDF</button>
-</body>
-
-</html>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="test.js"></script>

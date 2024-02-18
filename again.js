@@ -1,8 +1,6 @@
 // JavaScript object to store div content and CSS properties
-let tester = {
-  content: "",
-  style: {},
-};
+
+var testerStyle = [];
 
 // Function to change the style of the div
 function changeStyle() {
@@ -24,10 +22,10 @@ function changeStyle() {
   contentDiv.style.fontFamily = randomFontStyle;
 
   // Store the updated content and CSS properties in the tester object
-  tester.content = contentDiv.textContent;
-  tester.style.backgroundColor = contentDiv.style.backgroundColor;
-  tester.style.color = contentDiv.style.color;
-  tester.style.fontFamily = contentDiv.style.fontFamily;
+  // tester.content = contentDiv.textContent;
+  testerStyle.push((backgroundColor = contentDiv.style.backgroundColor));
+  testerStyle.push((color = contentDiv.style.color));
+  testerStyle.push((fontFamily = contentDiv.style.fontFamily));
 
   //   console.log(tester.style);
 }
@@ -35,7 +33,7 @@ function changeStyle() {
 function save() {
   var test = "test";
   var style = [];
-  style = tester.style;
+  style = testerStyle;
   $.ajax({
     url: "agains.php",
     type: "post",
@@ -48,3 +46,14 @@ function save() {
     },
   });
 }
+
+// Initialize an empty object
+var myObject = {};
+
+// Use a loop to insert values 1 to 10 into the object with keys
+for (var i = 1; i <= 10; i++) {
+  myObject["key" + i] = i;
+}
+
+// Output the object to the console
+console.log(myObject);
