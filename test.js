@@ -1,12 +1,19 @@
 // Function to change the style of the div
 function changeStyle() {
-  document.getElementById("btn").addEventListener("click", () => {
-    const contentDiv = document.getElementById("content");
+  const btn = document.getElementById("btn");
+  const contentDiv = document.getElementById("content");
+
+  const handleClick = (e) => {
+    // Remove event listener to ensure dataSend() runs only once
+    btn.removeEventListener("click", handleClick);
+
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     contentDiv.style.backgroundColor = randomColor;
+
     const randomFontColor =
       "#" + Math.floor(Math.random() * 16777215).toString(16);
     contentDiv.style.color = randomFontColor;
+
     const fontStyles = [
       "Arial",
       "Verdana",
@@ -17,9 +24,15 @@ function changeStyle() {
     const randomFontStyle =
       fontStyles[Math.floor(Math.random() * fontStyles.length)];
     contentDiv.style.fontFamily = randomFontStyle;
+    console.log(e.target);
+
     dataSend();
-  });
+  };
+
+  // Add event listener
+  btn.addEventListener("click", handleClick);
 }
+
 changeStyle();
 
 function dataSend() {
